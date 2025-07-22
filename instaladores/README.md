@@ -1,17 +1,16 @@
-# Instaladores para el Curso "Introducción al análisis en R"
+# Introducción al análisis en R
 ## 📋 ¿Qué instalan estos scripts?
 
 Este directorio contiene los scripts automatizados para instalar:
--  The Missing Package Manager for **macOS**
-- [rig](https://github.com/r-lib/rig): gestor de versiones de R
-- Última versión estable de R (desde CRAN)
-- Paquete [`pak`](https://pak.r-lib.org/) para instalación rápida y reproducible de paquetes
+- [rig](https://github.com/r-lib/rig) The R Installation Manager
+- [R](https://www.r-project.org/) Última versión estable desde CRAN
+- [`pak`](https://pak.r-lib.org/) para instalación rápida y reproducible de paquetes
 - [RTools](https://cran.r-project.org/bin/windows/Rtools/) (solo Windows)
-- [RStudio Desktop](https://posit.co/download/rstudio-desktop/): entorno de desarrollo para R
+- [RStudio Desktop](https://posit.co/download/rstudio-desktop/): entorno de desarrollo integrado
 
 Dependiendo del sistema operativo que utilices:
-- 💻 **Windows**: utiliza `[winget](https://learn.microsoft.com/es-es/windows/package-manager/winget/)` y `[PowerShell](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#winget)`.
-- 🍏 **macOS**: utiliza `[Homebrew](https://brew.sh/)`:🍺 y terminal zsh/bash.
+- 💻 **Windows**: utiliza [`winget`](https://learn.microsoft.com/es-es/windows/package-manager/winget/) y [`PowerShell`](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#winget).
+- 🍏 **macOS**: utiliza [`Homebrew`](https://brew.sh/)🍺 y terminal zsh/bash.
 
 ---
 
@@ -24,7 +23,7 @@ Dependiendo del sistema operativo que utilices:
 
 ---
 
-## 🖥️ Opción 1 (Windows - PowerShell): Ejecutar directamente
+## 🖥️ Opción 1 (Windows) PowerShell
 
 Abre PowerShell **como administrador** y ejecuta este comando:
 
@@ -34,21 +33,20 @@ irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_r
 
 ---
 
-## 🧰 Opción 2 (Windows - PowerShell con .bat)
-
-Si prefieres no copiar archivos manualmente:
-
-1. Abre PowerShell
-2. Ejecuta esta línea para descargar y ejecutar el instalador `.bat` con permisos:
+## 🧰 Opción 2 (Windows) PowerShell con .bat
+1. Abre PowerShell (puede ser sin admin)
+2. Ejecuta esta línea para descargar y ejecutar el instalador `.bat`
 
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.bat" -OutFile "$env:TEMP\instalador_windows.bat"; Start-Process -FilePath "$env:TEMP\instalador_windows.bat" -Verb RunAs
 ```
 
+**📌 ¿Por qué existe este archivo `.bat`?**  
+El archivo `.bat` permite a los usuarios ejecutar el instalador fácilmente desde **CMD** o **PowerShell**, incluso si no están familiarizados con PowerShell. Además, automatiza la elevación de privilegios para que no tengan que abrir manualmente PowerShell como administrador.
+
 ---
 
 ## 🖥️ Opción 3 (Windows - CMD)
-
 Si solo puedes usar **CMD**, copia y pega esta línea:
 
 ```cmd
@@ -61,7 +59,6 @@ Esto descargará y ejecutará el script con privilegios (pedirá confirmación d
 ---
 
 ## 🍏 Opción (macOS): Usar Homebrew y terminal
-
 1. Abre la terminal (zsh por defecto)
 2. Ejecuta el siguiente comando (Copia y Pega):
 
@@ -70,12 +67,11 @@ Esto descargará y ejecutará el script con privilegios (pedirá confirmación d
 ```
 
 ## 🧠 ¿Qué hacer si no puedes ejecutar los scripts?
-
 Si **no tienes permisos de administrador**, o no recuerdas la contraseña:
 
-- 🔸 Instala R manualmente desde: https://www.r-project.org/
-- 🔸 Instala RStudio desde: https://posit.co/download/rstudio-desktop/
-- 🔸 Luego abre RStudio y ejecuta en la consola:
+- Instala R manualmente desde: https://www.r-project.org/
+- Instala RStudio desde: https://posit.co/download/rstudio-desktop/
+- Luego abre RStudio y ejecuta en la consola:
 
 ```r
 install.packages("pak")
@@ -84,15 +80,20 @@ install.packages("pak")
 ---
 
 ## 📁 Archivos disponibles
-
-- `winget_rig.ps1`: Script PowerShell para Windows
-- `instalador_windows.bat`: Script auxiliar para ejecutar PowerShell con permisos
 - `homebrew_rig.sh`: Script para macOS usando Homebrew
+- `instalador_windows.bat`: Script auxiliar para ejecutar PowerShell con permisos
+- `winget_rig.ps1`: Script PowerShell para Windows
 
 ---
 
-## 👨‍🏫 Autor
+## ⚠️ Descargo de responsabilidad
 
+Estos scripts se proporcionan con fines educativos y de conveniencia. Su ejecución implica la instalación automatizada de software libre de terceros.
+**El autor no asume ninguna responsabilidad por posibles daños, fallos del sistema o conflictos que puedan surgir como resultado de su uso.**
+Asegúrate de comprender los cambios que se aplicarán a tu sistema
+
+---
+## 👨‍🏫 Autor
 **José Fernando Aguilera González**  
 Curso: *Introducción al análisis en R*  
 Licencia: MIT

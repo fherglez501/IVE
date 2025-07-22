@@ -7,7 +7,7 @@
 # Descripción: Este script instala rig, R, RStudio y pak en un sistema Windows.
 # Curso: Instalación de R y RStudio en Windows
 # Uso: Copia y pega este comando en PowerShell como administrador:
-# irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.ps1 | iex
+# irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1 | iex
 
 # ----------------------------------------------------------------
 # ⚠️ AVISO IMPORTANTE:
