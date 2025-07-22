@@ -6,7 +6,8 @@
 # Licencia: MIT
 # Descripción: Este script instala Homebrew, rig, R, RStudio y pak en un sistema macOS.
 # Curso: Instalación de R y RStudio en macOS
-# Uso: curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh | bash
+# Uso: copia y pega este comando en tu terminal: 
+# curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh | bash
 
 
 # ---------------------------
