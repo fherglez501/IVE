@@ -4,7 +4,7 @@
 # Última actualización: 2025-07-21
 # Requisitos: macOS, conexión a Internet
 # Licencia: MIT
-# Descripción: Este script instala Homebrew, rig, R y pak en un sistema macOS.
+# Descripción: Este script instala Homebrew, rig, R, RStudio y pak en un sistema macOS.
 # Curso: Instalación de R y RStudio en macOS
 # Uso: curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh | bash
 
@@ -38,7 +38,15 @@ fi
 # ---------------------------
 # ELEVACIÓN DE PERMISOS
 # ---------------------------
+# Verificar si el usuario tiene permisos de sudo
+# Si no tiene permisos, solicitar contraseña
 echo "🔐 Verificando permisos de administrador..."
+echo ""
+echo "🔐 Se requerirá tu contraseña para continuar."
+echo "ℹ️ Es la contraseña de tu usuario en este Mac — la misma que usas para iniciar sesión o instalar aplicaciones."
+echo "🛑 No se mostrará nada mientras escribes, eso es normal. Es una medida de seguridad del sistema."
+echo ""
+
 if ! sudo -n true 2>/dev/null; then
   sudo -v || { echo "❌ No se pudo obtener permisos de administrador. Abortando."; exit 1; }
 fi
