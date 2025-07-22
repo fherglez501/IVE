@@ -1,24 +1,33 @@
 # Instaladores para el Curso "Introducción al análisis en R"
 
-Este directorio contiene los scripts automatizados para instalar **R, rig, RTools, pak y RStudio** en sistemas Windows.
+Este directorio contiene los scripts automatizados para instalar:
+1. rig 
+2. R 
+3. RTools (Solo en windows)
+4. pak
+5. RStudio
+
+Dependiendo del sistema operativo que utilices:
+- 💻 **Windows**: utiliza `winget` y PowerShell.
+- 🍏 **macOS**: utiliza `Homebrew` y terminal zsh/bash.
 
 ---
 
-## 🖥️ Opción 1: Usar PowerShell directamente
+## 🖥️ Opción 1 (Windows): Usar PowerShell directamente
 
 Abre PowerShell **como administrador** y ejecuta este comando:
 
 ```powershell
-irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.ps1 | iex
+irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1 | iex
 ```
 
 ---
 
-## 🧰 Opción 2: Ejecutar automáticamente con `.bat`
+## 🧰 Opción 2 (Windows): Ejecutar automáticamente con `.bat`
 
 Si prefieres no copiar archivos manualmente:
 
-1. Abre PowerShell (puede ser sin admin)
+1. Abre PowerShell
 2. Ejecuta esta línea para descargar y ejecutar el instalador `.bat` con permisos:
 
 ```powershell
@@ -27,12 +36,30 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/fherglez501/IVE/main/i
 
 ---
 
-## 📋 ¿Qué instala este script?
+## 🍏 Opción (macOS): Usar Homebrew y terminal
+
+1. Abre la terminal (zsh por defecto)
+2. Ejecuta el siguiente comando:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_mac.sh)"
+```
+
+Este script instalará:
+- Homebrew
+- rig
+- Última versión de R
+- pak
+- RStudio
+
+---
+
+## 📋 ¿Qué instalan estos scripts?
 
 - [rig](https://github.com/r-lib/rig): gestor de versiones de R
 - Última versión estable de R (desde CRAN)
 - Paquete [`pak`](https://pak.r-lib.org/) para instalación rápida y reproducible de paquetes
-- [RTools](https://cran.r-project.org/bin/windows/Rtools/) (compilador para instalar paquetes desde fuente)
+- [RTools](https://cran.r-project.org/bin/windows/Rtools/) (solo Windows)
 - [RStudio Desktop](https://posit.co/download/rstudio-desktop/): entorno de desarrollo para R
 
 ---
@@ -40,12 +67,13 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/fherglez501/IVE/main/i
 ## ⚠️ Requisitos del sistema
 
 - Windows 10 (versión 21H1 o superior) o Windows 11
+- macOS Monterey (12.0) o superior
 - Conexión a Internet estable
-- Permisos de administrador (te pedirá confirmación)
+- Permisos de administrador (se solicitarán automáticamente)
 
 ---
 
-## 🧠 ¿Qué hacer si no puedes ejecutar el script?
+## 🧠 ¿Qué hacer si no puedes ejecutar los scripts?
 
 Si **no tienes permisos de administrador**, o no recuerdas la contraseña:
 
@@ -61,8 +89,9 @@ install.packages("pak")
 
 ## 📁 Archivos disponibles
 
-- `instalador_windows.ps1`: Script principal en PowerShell para instalar todo.
-- `instalador_windows.bat`: Script auxiliar para ejecutar automáticamente `ps1` con permisos.
+- `winget_rig.ps1`: Script PowerShell para Windows
+- `instalador_windows.bat`: Script auxiliar para ejecutar PowerShell con permisos
+- `instalador_mac.sh`: Script para macOS usando Homebrew
 
 ---
 
