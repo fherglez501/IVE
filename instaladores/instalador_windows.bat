@@ -21,6 +21,6 @@ if %errorlevel% neq 0 (
 )
 
 :: DESCARGAR Y EJECUTAR EL SCRIPT DE POWERSHELL DESDE GITHUB
-powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.ps1 | iex"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1 | iex"
 
 pause
