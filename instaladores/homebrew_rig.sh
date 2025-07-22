@@ -1,13 +1,46 @@
 #!/bin/bash
-# Script de instalación de Homebrew + rig + R + pak en macOS
-# Autor: Fer, curso Ciencia de Datos con R
+# Autor: José Fernando Aguilera González
+# Fecha de cración: 2025-07-21 
+# Última actualización: 2025-07-21
+# Requisitos: macOS, conexión a Internet
+# Licencia: MIT
+# Descripción: Este script instala Homebrew, rig, R y pak en un sistema macOS.
+# Curso: Instalación de R y RStudio en macOS
 # Uso: curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh | bash
 
-echo "💬 Este script instalará Homebrew, rig, R y pak en tu Mac."
+
+# ---------------------------
+# DESCRIPCIÓN DEL SCRIPT   
+# ---------------------------
+# Este script automatiza la instalación de Homebrew, rig, R y pak en macOS.
+# Incluye detección de arquitectura, configuración del shell y verificación de permisos.
+# El flujo de trabajo es el siguiente:
+# 1. Solicita confirmación del usuario.
+# 2. Verifica permisos de administrador.    
+# 3. Detecta arquitectura (arm64 o x86_64)
+# 4. Detecta el shell y configura el PATH
+# 5. Instala o actualiza Homebrew
+# 6. Instala rig con Homebrew
+# 7. Instala la última versión de R con rig
+# 8. Instala pak desde R
+# 9. Instala RStudio Desktop con Homebrew si no está presente
+# 10. Imprime sugerencias finales para el usuario
+
+# ---------------------------
+
+echo "💬 Este script instalará Homebrew, rig, R, pak y RStudio Desktop en tu Mac."
 read -p "¿Deseas continuar? [s/N]: " resp
 if [[ ! "$resp" =~ ^[Ss]$ ]]; then
   echo "❌ Instalación cancelada."
   exit 1
+fi
+
+# ---------------------------
+# ELEVACIÓN DE PERMISOS
+# ---------------------------
+echo "🔐 Verificando permisos de administrador..."
+if ! sudo -n true 2>/dev/null; then
+  sudo -v || { echo "❌ No se pudo obtener permisos de administrador. Abortando."; exit 1; }
 fi
 
 # ---------------------------
@@ -34,25 +67,27 @@ else
   PROFILE_FILE="$HOME/.profile"
   echo "⚠️ Shell no reconocido, se usará ~/.profile por defecto."
 fi
-echo "📄 Archivo de configuración detectado: $PROFILE_FILE"
+echo "📄 Archivo de configuración: $PROFILE_FILE"
 
 # ---------------------------
 # INSTALAR HOMEBREW
 # ---------------------------
 if ! command -v brew &> /dev/null; then
   echo "🍺 Instalando Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo 'eval "$('"$HOMEBREW_PREFIX"'/bin/brew shellenv)"' >> "$PROFILE_FILE"
   eval "$("$HOMEBREW_PREFIX"/bin/brew shellenv)"
 else
   echo "✅ Homebrew ya está instalado."
+  echo "📦 Ejecutando 'brew update'..."
+  brew update
 fi
 
 # ---------------------------
 # INSTALAR RIG
 # ---------------------------
 if ! command -v rig &> /dev/null; then
-  echo "🚀 Instalando rig con Homebrew..."
+  echo "🚀 Instalando rig..."
   brew tap r-lib/rig
   brew install --cask rig
 else
@@ -60,9 +95,9 @@ else
 fi
 
 # ---------------------------
-# INSTALAR R (última versión estable)
+# INSTALAR R
 # ---------------------------
-echo "📦 Instalando R con rig..."
+echo "📥 Instalando R con rig..."
 rig add release
 
 # ---------------------------
@@ -72,9 +107,20 @@ echo "📦 Verificando si 'pak' está instalado..."
 Rscript -e "if (!requireNamespace('pak', quietly = TRUE)) install.packages('pak', repos = 'https://cloud.r-project.org')"
 
 # ---------------------------
+# INSTALAR RSTUDIO
+# ---------------------------
+echo "🖥️ Verificando instalación de RStudio Desktop..."
+if ! [ -d "/Applications/RStudio.app" ]; then
+  echo "📥 Instalando RStudio Desktop con Homebrew..."
+  brew install --cask rstudio
+else
+  echo "✅ RStudio ya está instalado."
+fi
+
+# ---------------------------
 # VERIFICACIÓN FINAL
 # ---------------------------
-echo "🧪 Verificación:"
+echo -e "\n🧪 Verificación:"
 rig --version
 R --version
 which R
@@ -85,3 +131,5 @@ echo "💡 Para futuras sesiones, reinicia tu terminal o ejecuta:"
 echo "   source $PROFILE_FILE"
 echo "   o simplemente abre una nueva ventana de terminal."
 echo "🚀 ¡Disfruta de tu entorno de R en macOS!"
+echo "📂 Puedes abrir RStudio o ejecutarlo con una versión específica de R usando:"
+echo "   rig rstudio"
