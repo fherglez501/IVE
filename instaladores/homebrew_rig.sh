@@ -113,7 +113,9 @@ rig add release
 # INSTALAR PAK
 # ---------------------------
 echo "📦 Verificando si 'pak' está instalado..."
-Rscript -e "if (!requireNamespace('pak', quietly = TRUE)) install.packages('pak', repos = 'https://cloud.r-project.org')"
+rig system add-pak
+rig system make-links   
+rig system setup-user-lib  
 
 # ---------------------------
 # INSTALAR RSTUDIO
