@@ -63,7 +63,7 @@ if ($version -lt 1809) {
 # ---------------------------
 # FUNCIÓN: VERIFICAR E INSTALAR WINGET
 # ---------------------------
-function Ensure-Winget {
+function Install-WingetIfNeeded {
     Write-Host ""
     Write-Host "🔍 Verificando disponibilidad de winget..." -ForegroundColor Blue
 
@@ -106,7 +106,7 @@ function Ensure-Winget {
 }
 
 # Ejecutar función
-Ensure-Winget
+Install-WingetIfNeeded
 
 # ---------------------------
 # INSTALAR WINDOWS TERMINAL
