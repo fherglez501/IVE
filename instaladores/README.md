@@ -23,6 +23,13 @@ Dependiendo del sistema operativo, en:
 
 ---
 
+### Puedes verificar el codigo crudo de:
+1. **PowerShell**: https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1
+2. **CMD**: https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.bat
+3. **Homebrew**: https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh
+
+---
+
 ## ⚠️ Requisitos del sistema
 
 - **PERMISOS de ADMINSTRADOR** (se solicitarán automáticamente)
