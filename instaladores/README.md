@@ -3,13 +3,13 @@
 
 Este directorio contiene scripts automatizados para configurar un entorno funcional para análisis en R, incluyendo:
 
-- [Windows Terminal](https://learn.microsoft.com/es-es/windows/terminal/install) Un emulador de terminal moderna, rápida, eficaz, eficiente y productiva para Windows.
-- [Git](https://git-scm.com/) Software de control de versiones, registrando los cambios en archivos
-- [rig](https://github.com/r-lib/rig) The R Installation Manager
-- [R](https://www.r-project.org/) Última versión estable desde CRAN
-- [`pak`](https://pak.r-lib.org/) para instalación rápida y reproducible de paquetes
-- [RTools](https://cran.r-project.org/bin/windows/Rtools/) (solo Windows)
-- [RStudio Desktop](https://posit.co/download/rstudio-desktop/): entorno de desarrollo integrado
+- [Windows Terminal](https://learn.microsoft.com/es-es/windows/terminal/install): emulador moderno de terminal para Windows, rápido, eficiente y personalizable.
+- [Git](https://git-scm.com/): sistema de control de versiones que permite registrar y gestionar cambios en archivos de código y proyectos.
+- [rig](https://github.com/r-lib/rig): gestor de versiones de R que facilita la instalación y administración de múltiples versiones.
+- [R](https://www.r-project.org/): lenguaje y entorno de programación para análisis estadístico y visualización de datos.
+- [`pak`](https://pak.r-lib.org/): paquete que permite instalar otras bibliotecas de R de forma rápida, segura y reproducible.
+- [RTools](https://cran.r-project.org/bin/windows/Rtools/) (solo Windows): conjunto de herramientas necesarias para compilar e instalar paquetes de R que incluyen código en C, C++ o Fortran.
+- [RStudio Desktop](https://posit.co/download/rstudio-desktop/): entorno de desarrollo integrado (IDE) que facilita escribir, ejecutar y visualizar código en R desde una sola interfaz.
 
 Dependiendo del sistema operativo, en:
 - 💻 **Windows**: utiliza [`winget`](https://learn.microsoft.com/es-es/windows/package-manager/winget/) y [`PowerShell`](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#winget).
