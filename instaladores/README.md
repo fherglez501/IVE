@@ -58,8 +58,6 @@ irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_r
 powershell -Command "iwr https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.bat -OutFile \"$env:TEMP\instalador_windows.bat\"; Start-Process \"$env:TEMP\instalador_windows.bat\" -Verb RunAs"
 ```
 
----
-
 **📌 ¿Por qué existe este archivo `.bat`?**  
 El archivo `.bat` permite a los usuarios ejecutar el instalador fácilmente desde **CMD**, incluso si no están familiarizados con **PowerShell**.
 Automáticamente descargará y ejecutará el script principal [winget_rig.ps1](https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.bat) con permisos de administrador.
