@@ -12,8 +12,8 @@ Este directorio contiene scripts automatizados para configurar un entorno funcio
 - [RStudio Desktop](https://posit.co/download/rstudio-desktop/): entorno de desarrollo integrado (IDE) que facilita escribir, ejecutar y visualizar código en R desde una sola interfaz.
 
 Dependiendo del sistema operativo, en:
-- 💻 **Windows**: utiliza [`winget`](https://learn.microsoft.com/es-es/windows/package-manager/winget/) y [`PowerShell`](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#winget).
-- 🍏 **macOS**: utiliza [`Homebrew`](https://brew.sh/)🍺 y terminal zsh/bash.
+- 💻 **Windows**: utiliza 📦 [`winget`](https://learn.microsoft.com/es-es/windows/package-manager/winget/) y 🟦 [`PowerShell`](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#winget).
+- 🍏 **macOS**: utiliza 🍺 [`Homebrew`](https://brew.sh/) y terminal 🐚 zsh/bash.
 
 ### ⚙️ Comportamiento inteligente de los scripts
 
@@ -39,7 +39,7 @@ Dependiendo del sistema operativo, en:
 
 ---
 
-## 🖥️ Opción 1 en Windows utilizando PowerShell
+## 🖥️ Opción 1 en Windows utilizando 🟦 PowerShell
 
 1. Abre **PowerShell como administrador** 
 2. Ejecuta el siguiente comando (Copia y Pega):
@@ -50,7 +50,7 @@ irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_r
 
 ---
 
-##  Opción 2 en Windows utilizando CMD con .bat
+##  Opción 2 en Windows utilizando ⚫ CMD con .bat
 1. Abre **CMD como administrador** 
 2. Ejecuta el siguiente comando (Copia y Pega) para ejecutar el instalador `.bat`
 
@@ -64,7 +64,7 @@ Automáticamente descargará y ejecutará el script principal [winget_rig.ps1](h
 
 ---
 
-## 🍏 Opción en macOS utilizando zsh con Homebrew
+## 🍏 Opción en macOS utilizando 🐚 zsh con 🍺 Homebrew 
 1. Abre la terminal (zsh por defecto)
 2. Ejecuta el siguiente comando (Copia y Pega):
 
