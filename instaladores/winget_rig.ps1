@@ -1,12 +1,12 @@
 
 # Autor: José Fernando Aguilera González
-# Fecha de cración: 2025-07-21 
-# Última actualización: 2025-07-21
+# Fecha de creación: 2025-07-21 
+# Última actualización: 2025-07-23
 # Requisitos: windows, conexión a Internet
 # Licencia: MIT
 # Descripción: Este script instala rig, R, RStudio y pak en un sistema Windows.
 # Tema: Instalación de R y RStudio en Windows
-# Uso: Copia y pega este comando en PowerShell como administrador:
+# Uso: Copia y pega este comando en PowerShell como administrador (omite el símbolo #):
 # irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1 | iex
 
 # ----------------------------------------------------------------
