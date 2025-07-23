@@ -250,7 +250,7 @@ which rig
 echo -e "\n🎉 Todo listo: Homebrew, rig, R, pak, RStudio y Git están instalados."
 echo "💡 Para futuras sesiones, reinicia tu terminal o ejecuta:"
 echo "   source $PROFILE_FILE"
-echo "   o simplemente abre una nueva ventana de terminal."
+echo "   o simplemente abre una nueva ventana de terminal con privilegios de Administrador."
 echo "🚀 ¡Disfruta de tu entorno de R en macOS!"
 echo "📂 Puedes abrir RStudio o ejecutarlo con una versión específica de R usando:"
 echo "   rig rstudio"
