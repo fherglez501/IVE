@@ -5,7 +5,7 @@
 # Requisitos: macOS, conexión a Internet
 # Licencia: MIT
 # Descripción: Este script instala Homebrew, rig, R, RStudio y pak en un sistema macOS.
-# Curso: Instalación de R y RStudio en macOS
+# Tema: Instalación de R y RStudio en macOS
 # Uso: copia y pega este comando en tu terminal: 
 # curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh | bash
 
@@ -13,7 +13,7 @@
 # ---------------------------
 # DESCRIPCIÓN DEL SCRIPT   
 # ---------------------------
-# Este script automatiza la instalación de Homebrew, rig, R y pak en macOS.
+# Este script automatiza la instalación de Homebrew, rig, R, pak , RStudio y Git en macOS.
 # Incluye detección de arquitectura, configuración del shell y verificación de permisos.
 # El flujo de trabajo es el siguiente:
 # 1. Solicita confirmación del usuario.
