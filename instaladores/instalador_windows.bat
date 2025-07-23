@@ -1,7 +1,7 @@
 @echo off
 :: Autor: José Fernando Aguilera González
 :: Fecha: 2025-07-22
-:: Descripción: Este script descarga y ejecuta el instalador de R + rig + pak + RStudio en Windows mediante PowerShell
+:: Descripción: Este script descarga y ejecuta el instalador rig + R + pak + RStudio + Git en Windows mediante PowerShell
 
 :: VERIFICAR EJECUCIÓN COMO ADMINISTRADOR
 net session >nul 2>&1
