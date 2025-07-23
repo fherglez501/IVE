@@ -2,13 +2,15 @@
 ## 📋 ¿Qué instalan estos scripts?
 
 Este directorio contiene los scripts automatizados para instalar:
+- [Windows Terminal](https://learn.microsoft.com/es-es/windows/terminal/install) Un emulador de terminal moderna, rápida. eficaz, eficiente y productiva
+- [Git](https://git-scm.com/) Software de control de versiones, registrando los cambios en archivos
 - [rig](https://github.com/r-lib/rig) The R Installation Manager
 - [R](https://www.r-project.org/) Última versión estable desde CRAN
 - [`pak`](https://pak.r-lib.org/) para instalación rápida y reproducible de paquetes
 - [RTools](https://cran.r-project.org/bin/windows/Rtools/) (solo Windows)
 - [RStudio Desktop](https://posit.co/download/rstudio-desktop/): entorno de desarrollo integrado
 
-Dependiendo del sistema operativo que utilices:
+Dependiendo del sistema operativo, en:
 - 💻 **Windows**: utiliza [`winget`](https://learn.microsoft.com/es-es/windows/package-manager/winget/) y [`PowerShell`](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#winget).
 - 🍏 **macOS**: utiliza [`Homebrew`](https://brew.sh/)🍺 y terminal zsh/bash.
 
@@ -16,16 +18,17 @@ Dependiendo del sistema operativo que utilices:
 
 ## ⚠️ Requisitos del sistema
 
+- **PERMISOS de ADMINSTRADOR** (se solicitarán automáticamente)
 - Windows 10 (versión 21H1 o superior) o Windows 11
 - macOS Monterey (12.0) o superior
 - Conexión a Internet estable
-- **PERMISOS de ADMINSTRADOR** (se solicitarán automáticamente)
 
 ---
 
 ## 🖥️ Opción 1 (Windows) PowerShell
 
-Abre PowerShell **como administrador** y ejecuta este comando:
+1. Abre **PowerShell como administrador** 
+2. Ejecuta el siguiente comando (Copia y Pega):
 
 ```powershell
 irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1 | iex
@@ -33,28 +36,19 @@ irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_r
 
 ---
 
-## 🧰 Opción 2 (Windows) PowerShell con .bat
-1. Abre PowerShell (puede ser sin admin)
-2. Ejecuta esta línea para descargar y ejecutar el instalador `.bat`
+##  Opción 2 (Windows) CMD con .bat
+1. Abre **CMD como administrador** 
+2. Ejecuta el siguiente comando (Copia y Pega) para ejecutar el instalador `.bat`
 
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.bat" -OutFile "$env:TEMP\instalador_windows.bat"; Start-Process -FilePath "$env:TEMP\instalador_windows.bat" -Verb RunAs
 ```
 
-**📌 ¿Por qué existe este archivo `.bat`?**  
-El archivo `.bat` permite a los usuarios ejecutar el instalador fácilmente desde **CMD** o **PowerShell**, incluso si no están familiarizados con PowerShell. Además, automatiza la elevación de privilegios para que no tengan que abrir manualmente PowerShell como administrador.
-
 ---
 
-## 🖥️ Opción 3 (Windows - CMD)
-Si solo puedes usar **CMD**, copia y pega esta línea:
-
-```cmd
-curl -o %TEMP%\instalador_windows.bat https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.bat && %TEMP%\instalador_windows.bat
-
-```
-
-Esto descargará y ejecutará el script con privilegios (pedirá confirmación de administrador si es necesario).
+**📌 ¿Por qué existe este archivo `.bat`?**  
+El archivo `.bat` permite a los usuarios ejecutar el instalador fácilmente desde **CMD**, incluso si no están familiarizados con **PowerShell**.
+Este archivo ejecutará el script y pedirá confirmación de administrador si es necesario.
 
 ---
 
@@ -69,6 +63,7 @@ Esto descargará y ejecutará el script con privilegios (pedirá confirmación d
 ## 🧠 ¿Qué hacer si no puedes ejecutar los scripts?
 Si **no tienes permisos de administrador**, o no recuerdas la contraseña:
 
+- Instala Git manualmente desde: https://git-scm.com/downloads
 - Instala R manualmente desde: https://www.r-project.org/
 - Instala RStudio desde: https://posit.co/download/rstudio-desktop/
 - Luego abre RStudio y ejecuta en la consola:
