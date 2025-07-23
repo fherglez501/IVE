@@ -32,7 +32,7 @@ Dependiendo del sistema operativo, en:
 
 ---
 
-## 🖥️ Opción 1 (Windows) PowerShell
+## 🖥️ Opción 1 en Windows con PowerShell
 
 1. Abre **PowerShell como administrador** 
 2. Ejecuta el siguiente comando (Copia y Pega):
@@ -43,7 +43,7 @@ irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_r
 
 ---
 
-##  Opción 2 (Windows) CMD con .bat
+##  Opción 2 en Windows con CMD con .bat
 1. Abre **CMD como administrador** 
 2. Ejecuta el siguiente comando (Copia y Pega) para ejecutar el instalador `.bat`
 
@@ -59,7 +59,7 @@ Este archivo ejecutará el script y pedirá confirmación de administrador si es
 
 ---
 
-## 🍏 Opción (macOS): Usar Homebrew y terminal
+## 🍏 Opción en macOS con Homebrew y terminal
 1. Abre la terminal (zsh por defecto)
 2. Ejecuta el siguiente comando (Copia y Pega):
 
