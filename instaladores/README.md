@@ -23,7 +23,7 @@ Dependiendo del sistema operativo, en:
 
 ---
 
-### Puedes verificar el codigo crudo de:
+### Puedes verificar el código crudo en:
 1. **PowerShell**: https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1
 2. **CMD**: https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/instalador_windows.bat
 3. **Homebrew**: https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh
@@ -39,7 +39,7 @@ Dependiendo del sistema operativo, en:
 
 ---
 
-## 🖥️ Opción 1 en Windows con PowerShell
+## 🖥️ Opción 1 en Windows utilizando PowerShell
 
 1. Abre **PowerShell como administrador** 
 2. Ejecuta el siguiente comando (Copia y Pega):
@@ -50,7 +50,7 @@ irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_r
 
 ---
 
-##  Opción 2 en Windows con CMD con .bat
+##  Opción 2 en Windows utilizando CMD con .bat
 1. Abre **CMD como administrador** 
 2. Ejecuta el siguiente comando (Copia y Pega) para ejecutar el instalador `.bat`
 
@@ -66,7 +66,7 @@ Este archivo ejecutará el script y pedirá confirmación de administrador si es
 
 ---
 
-## 🍏 Opción en macOS con Homebrew y terminal
+## 🍏 Opción en macOS utilizando zsh con Homebrew
 1. Abre la terminal (zsh por defecto)
 2. Ejecuta el siguiente comando (Copia y Pega):
 
