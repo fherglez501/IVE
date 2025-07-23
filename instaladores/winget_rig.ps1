@@ -5,7 +5,7 @@
 # Requisitos: windows, conexión a Internet
 # Licencia: MIT
 # Descripción: Este script instala rig, R, RStudio y pak en un sistema Windows.
-# Curso: Instalación de R y RStudio en Windows
+# Tema: Instalación de R y RStudio en Windows
 # Uso: Copia y pega este comando en PowerShell como administrador:
 # irm https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/winget_rig.ps1 | iex
 
