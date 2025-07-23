@@ -1,12 +1,12 @@
 #!/bin/bash
 # Autor: José Fernando Aguilera González
-# Fecha de cración: 2025-07-21 
-# Última actualización: 2025-07-21
+# Fecha de creación: 2025-07-21 
+# Última actualización: 2025-07-23
 # Requisitos: macOS, conexión a Internet
 # Licencia: MIT
 # Descripción: Este script instala Homebrew, rig, R, RStudio y pak en un sistema macOS.
 # Tema: Instalación de R y RStudio en macOS
-# Uso: copia y pega este comando en tu terminal: 
+# Uso: copia y pega este comando en tu terminal (omite el símbolo #): 
 # curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh | bash
 
 
@@ -27,88 +27,9 @@
 # 9. Instala pak desde R
 # 10. Instala RStudio Desktop con Homebrew si no está presente
 # 11. Imprime sugerencias finales para el usuario
-
+# 12. Verifica las instalaciones de rig, R y RStudio
+# 13. Imprime un mensaje de éxito final
 # ---------------------------
-
-echo "💬 Este script instalará Homebrew, rig, R, pak y RStudio Desktop en tu Mac."
-read -p "¿Deseas continuar? [s/N]: " resp
-if [[ ! "$resp" =~ ^[Ss]$ ]]; then
-  echo "❌ Instalación cancelada."
-  exit 1
-fi
-
-# ---------------------------
-# ELEVACIÓN DE PERMISOS
-# ---------------------------
-# Verificar si el usuario tiene permisos de sudo
-# Si no tiene permisos, solicitar contraseña
-echo "🔐 Verificando permisos de administrador..."
-echo ""
-echo "🔐 Se requerirá tu contraseña para continuar."
-echo "ℹ️ Es la contraseña de tu usuario en este Mac — la misma que usas para iniciar sesión o instalar aplicaciones."
-echo "🛑 No se mostrará nada mientras escribes, eso es normal. Es una medida de seguridad del sistema."
-echo ""
-
-if ! sudo -n true 2>/dev/null; then
-  sudo -v || { echo "❌ No se pudo obtener permisos de administrador. Abortando."; exit 1; }
-fi
-
-# ---------------------------
-# DETECTAR ARQUITECTURA
-# ---------------------------
-ARCH=$(uname -m)
-if [ "$ARCH" = "arm64" ]; then
-  echo "✅ Apple Silicon (arm64) detectado."
-  HOMEBREW_PREFIX="/opt/homebrew"
-else
-  echo "✅ Intel (x86_64) detectado."
-  HOMEBREW_PREFIX="/usr/local"
-fi
-
-# ---------------------------
-# DETECTAR SHELL
-# ---------------------------
-SHELL_NAME=$(basename "$SHELL")
-if [ "$SHELL_NAME" = "zsh" ]; then
-  PROFILE_FILE="$HOME/.zprofile"
-elif [ "$SHELL_NAME" = "bash" ]; then
-  PROFILE_FILE="$HOME/.bash_profile"
-else
-  PROFILE_FILE="$HOME/.profile"
-  echo "⚠️ Shell no reconocido, se usará ~/.profile por defecto."
-fi
-echo "📄 Archivo de configuración: $PROFILE_FILE"
-
-# ---------------------------
-# INSTALAR HOMEBREW
-# ---------------------------
-if ! command -v brew &> /dev/null; then
-  echo "🍺 Instalando Homebrew..."
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$('"$HOMEBREW_PREFIX"'/bin/brew shellenv)"' >> "$PROFILE_FILE"
-  eval "$("$HOMEBREW_PREFIX"/bin/brew shellenv)"
-else
-  echo "✅ Homebrew ya está instalado."
-  echo "📦 Ejecutando 'brew update'..."
-  brew update
-fi
-
-ChatGPT dijo:
-Aquí tienes el script completo homebrew_rig.sh actualizado, con la sección de verificación e instalación opcional de Git ya integrada de forma pedagógica y segura. Puedes copiarlo directamente y subirlo a tu repositorio:
-
-bash
-Copiar
-Editar
-#!/bin/bash
-# Autor: José Fernando Aguilera González
-# Fecha de creación: 2025-07-21 
-# Última actualización: 2025-07-23
-# Requisitos: macOS, conexión a Internet
-# Licencia: MIT
-# Descripción: Este script instala Homebrew, rig, R, pak, RStudio y Git en un sistema macOS.
-# Curso: Instalación de R y RStudio en macOS
-# Uso: copia y pega este comando en tu terminal: 
-# curl -fsSL https://raw.githubusercontent.com/fherglez501/IVE/main/instaladores/homebrew_rig.sh | bash
 
 # ---------------------------
 # CONFIRMACIÓN INICIAL
