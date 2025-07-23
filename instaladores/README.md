@@ -1,8 +1,9 @@
 # Introducción al análisis en R
 ## 📋 ¿Qué instalan estos scripts?
 
-Este directorio contiene los scripts automatizados para instalar:
-- [Windows Terminal](https://learn.microsoft.com/es-es/windows/terminal/install) Un emulador de terminal moderna, rápida. eficaz, eficiente y productiva
+Este directorio contiene scripts automatizados para configurar un entorno funcional para análisis en R, incluyendo:
+
+- [Windows Terminal](https://learn.microsoft.com/es-es/windows/terminal/install) Un emulador de terminal moderna, rápida, eficaz, eficiente y productiva para Windows.
 - [Git](https://git-scm.com/) Software de control de versiones, registrando los cambios en archivos
 - [rig](https://github.com/r-lib/rig) The R Installation Manager
 - [R](https://www.r-project.org/) Última versión estable desde CRAN
@@ -13,6 +14,12 @@ Este directorio contiene los scripts automatizados para instalar:
 Dependiendo del sistema operativo, en:
 - 💻 **Windows**: utiliza [`winget`](https://learn.microsoft.com/es-es/windows/package-manager/winget/) y [`PowerShell`](https://learn.microsoft.com/es-es/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4#winget).
 - 🍏 **macOS**: utiliza [`Homebrew`](https://brew.sh/)🍺 y terminal zsh/bash.
+
+### ⚙️ Comportamiento inteligente de los scripts
+
+- Si alguna herramienta ya está instalada, **no se reinstala**.
+- En macOS, si Git proviene del sistema (`/usr/bin/git`), se ofrece instalar la versión de Homebrew.
+- En Windows, Git se instala con `winget` si no está disponible o no está en el `PATH`.
 
 ---
 
