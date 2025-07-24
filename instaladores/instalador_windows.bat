@@ -1,9 +1,9 @@
 @echo off
-:: Autor: José Fernando Aguilera González
+:: Autor: José Fernando Aguilera Gonzalez
 :: Fecha: 2025-07-22
-:: Descripción: Este script descarga y ejecuta el instalador rig + R + pak + RStudio + Git en Windows mediante PowerShell
+:: Descripcion: Este script descarga y ejecuta el instalador rig + R + pak + RStudio + Git en Windows mediante PowerShell
 
-:: VERIFICAR EJECUCIÓN COMO ADMINISTRADOR
+:: VERIFICAR EJECUCIoN COMO ADMINISTRADOR
 net session >nul 2>&1
 if %errorlevel% neq 0 (
     echo ❌ Este script debe ejecutarse como administrador.
@@ -12,10 +12,10 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-:: VERIFICAR CONEXIÓN A INTERNET
+:: VERIFICAR CONEXIoN A INTERNET
 ping -n 1 github.com >nul 2>&1
 if %errorlevel% neq 0 (
-    echo ❌ No hay conexión a Internet. Conéctate y vuelve a intentarlo.
+    echo ❌ No hay conexion a Internet. Conéctate y vuelve a intentarlo.
     pause
     exit /b
 )
