@@ -21,6 +21,9 @@
 Write-Host ""
 Write-Host "🧪 Curso: Introducción al análisis en R" -ForegroundColor Cyan
 Write-Host "🔧 Iniciando instalación automatizada en Windows..." -ForegroundColor Green
+Write-Host "👁️ Verificando compatibilidad de íconos en esta terminal..." -ForegroundColor Gray
+Write-Host "✅ → OK   ❌ → ERROR   ⏳ → ESPERA   📦 → INSTALANDO   💡 → CONSEJO" -ForegroundColor Gray
+Write-Host ""
 Write-Host ""
 
 # ---------------------------
@@ -33,7 +36,7 @@ Write-Host "ℹ️ Si ves una ventana emergente, haz clic en 'Sí' para continua
 Write-Host "🔑 Si se te pide una contraseña, usa la de un usuario con privilegios de administrador." -ForegroundColor Gray
 Write-Host ""
 
-Write-Host "ℹ️  TIPOS DE CUENTA Y QUÉ OCURRE AL EJECUTAR COMO ADMINISTRADOR" -ForegroundColor Cyan
+Write-Host "TIPOS DE CUENTA Y QUÉ OCURRE AL EJECUTAR COMO ADMINISTRADOR" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "  Tipo de cuenta              | Lo que se solicita"
 Write-Host "  ----------------------------|-------------------------------------------"
@@ -43,61 +46,43 @@ Write-Host "  Cuenta Microsoft con admin  | Pide la contraseña de esa cuenta"
 Write-Host ""
 
 If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
-        [Security.Principal.WindowsBuiltInRole] "Administrator"))
-{
+        [Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    Write-Host ""
     Write-Host "❌ Este script debe ejecutarse como administrador." -ForegroundColor Red
     Write-Host "ℹ️ Haz clic derecho sobre el icono de PowerShell y selecciona 'Ejecutar como administrador'." -ForegroundColor Yellow
-    Write-Host "🔁 Copia y Pega nuevamente este script en PowerShell." -ForegroundColor Yellow
+    Write-Host "⏳ Esta ventana se cerrará automáticamente en 10 segundos..." -ForegroundColor Gray
+    Start-Sleep -Seconds 10
     Exit 1
 }
 
 # ---------------------------
-# VERIFICAR VERSIÓN DE WINDOWS
-# ---------------------------
-$version = (Get-ComputerInfo).WindowsVersion
-if ($version -lt 1809) {
-    Write-Host "❌ Este script requiere Windows 10 versión 1809 o superior para utilizar winget." -ForegroundColor Red
-    Exit 1
-}
-
-# ---------------------------
-# FUNCIÓN: VERIFICAR E INSTALAR WINGET
+# FUNCIÓN: INSTALAR O ACTUALIZAR WINGET
 # ---------------------------
 function Install-WingetIfNeeded {
     Write-Host ""
     Write-Host "🔍 Verificando disponibilidad de winget..." -ForegroundColor Blue
 
     if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-        Write-Host "❌ winget no está disponible en este sistema." -ForegroundColor Red
-        Write-Host "🔄 Intentando instalar App Installer desde Microsoft Store..." -ForegroundColor Gray
+        Write-Host "❌ winget no está disponible. Intentando instalar App Installer..." -ForegroundColor Yellow
 
-        $storeApp = Get-AppxPackage -Name "Microsoft.WindowsStore" -ErrorAction SilentlyContinue
-        if (-not $storeApp) {
-            Write-Host "❌ Microsoft Store no está instalada. Intentando restaurarla..." -ForegroundColor Yellow
-            try {
-                Add-AppxPackage -DisableDevelopmentMode -Register "C:\Program Files\WindowsApps\Microsoft.WindowsStore_8wekyb3d8bbwe\AppxManifest.xml"
-                Write-Host "✅ Microsoft Store restaurada. Ábrela e instala 'App Installer' manualmente." -ForegroundColor Green
-            } catch {
-                Write-Host "⚠️ No se pudo restaurar la Microsoft Store." -ForegroundColor Red
-                Write-Host "👉 Descarga manual App Installer: https://aka.ms/getappinstaller" -ForegroundColor Cyan
-                Exit 1
-            }
-        }
-
+        $msixPath = "$env:TEMP\AppInstaller.msixbundle"
         try {
-            Start-Process "ms-windows-store://pdp/?ProductId=9NBLGGH4NNS1"
-            Write-Host "ℹ️ Se ha abierto la tienda. Instala 'App Installer' y vuelve a ejecutar este script." -ForegroundColor Gray
-            Write-Host "🔁 Recuerda abrir PowerShell como Administrador." -ForegroundColor Yellow
+            Invoke-WebRequest -Uri "https://aka.ms/getwinget" -OutFile $msixPath -UseBasicParsing
+            Add-AppxPackage -Path $msixPath
+            Write-Host "✅ App Installer instalado. Puedes cerrar esta terminal y volver a ejecutar el script si es necesario." -ForegroundColor Green
+            Exit 0
         } catch {
-            Write-Host "⚠️ No se pudo abrir Microsoft Store automáticamente." -ForegroundColor Yellow
-            Write-Host "🔗 Abre manualmente: https://aka.ms/getappinstaller" -ForegroundColor Cyan
+            Write-Host "❌ No se pudo instalar winget automáticamente." -ForegroundColor Red
+            Write-Host "👉 Instálalo manualmente desde: https://aka.ms/getwinget" -ForegroundColor Cyan
+            Write-Host "⏳ Esta ventana se cerrará automáticamente en 10 segundos..." -ForegroundColor Gray
+            Start-Sleep -Seconds 10
+            Exit 1
         }
-
-        Exit 1
     } else {
         Write-Host "✅ winget está disponible." -ForegroundColor Green
-        Write-Host "🔄 Actualizando fuentes de winget..." -ForegroundColor Blue
+        Write-Host "🔄 Verificando actualizaciones de winget..." -ForegroundColor Blue
         try {
+            winget upgrade --id Microsoft.DesktopAppInstaller -e --silent --accept-source-agreements --accept-package-agreements
             winget source update
         } catch {
             Write-Host "⚠️ No se pudo actualizar winget. Continuando..." -ForegroundColor Yellow
@@ -163,9 +148,10 @@ winget install --id posit.rig -e --accept-source-agreements --accept-package-agr
 if (-not (Get-Command rig -ErrorAction SilentlyContinue)) {
     Write-Host "⚠️ rig no está disponible en el PATH aún." -ForegroundColor Yellow
     Write-Host "🔁 Al finalizar la instalación, reinicia PowerShell o abre una nueva terminal para asegurar su disponibilidad." -ForegroundColor Gray
-    Exit 1
+} else {
+    Write-Host "✅ rig instalado correctamente." -ForegroundColor Green    
 }
-Write-Host "✅ rig instalado correctamente." -ForegroundColor Green
+
 
 # ---------------------------
 # INSTALAR R CON RIG
@@ -191,9 +177,11 @@ winget install --id Posit.RStudio -e --accept-source-agreements --accept-package
 # MENSAJE FINAL
 # ---------------------------
 Write-Host ""
-Write-Host "🎉 Instalación completada: R y RStudio ya están disponibles en tu sistema." -ForegroundColor Green
+Write-Host "🎉 Instalación completada: R, RStudio y Git ya están disponibles en tu sistema." -ForegroundColor Green
 Write-Host "💡 Puedes buscar 'RStudio' en el menú de inicio para comenzar a trabajar." -ForegroundColor Cyan
-Write-Host "💡 Puedes abrir Git Bash desde el menú inicio o utilizar Git directamente desde RStudio." -ForegroundColor Cyan
-Write-Host "🔁 Por favor, reinicia PowerShell al finalizar todo el proceso para que los cambios surtan efecto." -ForegroundColor Gray
-Write-Host "⚠️ Recuerda abrir PowerShell como Administrador." -ForegroundColor Yellow
+Write-Host "🌿 Puedes usar Git directamente desde RStudio o abrir Git Bash." -ForegroundColor Cyan
+Write-Host "🔁 Se recomienda reiniciar PowerShell o tu equipo para asegurar que todos los cambios surtan efecto correctamente." -ForegroundColor Yellow
 Write-Host ""
+Write-Host "⏳ Esta ventana se cerrará automáticamente en 12 segundos..." -ForegroundColor DarkGray
+Start-Sleep -Seconds 12
+Exit 0
