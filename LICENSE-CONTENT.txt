@@ -17,5 +17,5 @@ Bajo las siguientes condiciones:
 ---
 
 **Autor:** José Fernando Aguilera González  
-**Curso:** Introducción al análisis en R  
+**Curso:** Introducción a la ciencia de datos con R  
 **Licencia completa:** https://creativecommons.org/licenses/by-nc/4.0/
