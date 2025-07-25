@@ -1,8 +1,3 @@
-<p align="center">
-  <a href="https://ive.la/" target="_blank">
-    <img src="../img/logo-ive.png" alt="Instituto Veterinario y de Ecología" width="150"/>
-  </a>
-</p>
 
 # Bienvnid@s
 
@@ -73,7 +68,7 @@ Consulta los archivos `LICENSE-CONTENT.txt` y `LICENSE-CODE.txt` para más detal
 
 <p align="left">
   <a href="https://www.linkedin.com/in/mvzferglez/" target="_blank">
-    <img src="img/01-fer-perfil.png" alt="José Fernando Aguilera González" width="140"
+    <img src="./img/fer.png" alt="José Fernando Aguilera González" width="140"
     style="border-circle: 50%"/>
   </a>
 </p>
