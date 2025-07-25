@@ -1,0 +1,21 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+Este contenido educativo está licenciado bajo la Licencia Creative Commons Atribución - No Comercial 4.0 Internacional.
+
+Puedes:
+
+✔️ Compartir — copiar y redistribuir el material en cualquier medio o formato  
+✔️ Adaptar — remezclar, transformar y construir a partir del material  
+
+🛑 **Siempre que sea con fines NO comerciales.**
+
+Bajo las siguientes condiciones:
+
+📌 Atribución — Debes otorgar el crédito adecuado, proporcionar un enlace a la licencia, e indicar si se han realizado cambios.  
+📌 No Comercial — No puedes usar el material con fines comerciales.
+
+---
+
+**Autor:** José Fernando Aguilera González  
+**Curso:** Introducción al análisis en R  
+**Licencia completa:** https://creativecommons.org/licenses/by-nc/4.0/

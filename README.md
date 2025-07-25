@@ -1,4 +1,8 @@
-# Introducción al análisis en R
+<p align="center">
+  <img src="img/logo-ive.png" alt="Instituto Veterinario y de Ecología" width="350"/>
+</p>
+
+# Bienvnid@s
 
 Este repositorio forma parte del curso online **"Introducción al análisis en R"**, orientado a estudiantes y profesionales sin experiencia previa en programación. El objetivo es brindar una formación práctica y progresiva **introductoria** en ciencia de datos utilizando herramientas abiertas, reproducibles y modernas.
 
@@ -43,7 +47,7 @@ Consulta el archivo [`instaladores/README.md`](./instaladores/README.md) para in
 ## 📚 Recursos incluidos en este repositorio
 
 - Scripts automatizados para instalación de R, RStudio, rig, pak y más
-- Materiales del curso en formato R (`.R`)
+- Materiales del curso en formato `.R`
 - Ejercicios prácticos con datos reales o simulados
 - Instrucciones paso a paso para ambientes reproducibles
 
@@ -64,6 +68,10 @@ Consulta los archivos `LICENSE-CONTENT.txt` y `LICENSE-CODE.txt` para más detal
 ---
 
 ## 👨‍🏫 Autor
+
+<p align="center">
+  <img src="img/01-fer-perfil.png" alt="José Fernando Aguilera González" width="140" style="border-radius: 50%;"/>
+</p>
 
 **José Fernando Aguilera González**  
 Candidato a Doctor en Medicina de la Conservación  
