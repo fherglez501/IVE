@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="img/logo-ive.png" alt="Instituto Veterinario y de Ecología" width="350"/>
+  <a href="https://ive.la/" target="_blank">
+    <img src="../img/logo-ive.png" alt="Instituto Veterinario y de Ecología" width="150"/>
+  </a>
 </p>
 
 # Bienvnid@s
@@ -69,13 +71,17 @@ Consulta los archivos `LICENSE-CONTENT.txt` y `LICENSE-CODE.txt` para más detal
 
 ## 👨‍🏫 Autor
 
-<p align="center">
-  <img src="img/01-fer-perfil.png" alt="José Fernando Aguilera González" width="140" style="border-radius: 50%;"/>
+<p align="left">
+  <a href="https://www.linkedin.com/in/mvzferglez/" target="_blank">
+    <img src="img/01-fer-perfil.png" alt="José Fernando Aguilera González" width="140"
+    style="border-circle: 50%"/>
+  </a>
 </p>
 
 **José Fernando Aguilera González**  
 Candidato a Doctor en Medicina de la Conservación  
-Docente responsable del curso  
+Docente responsable del curso
+📬 [Contáctame por correo](mailto:mvzferglez@gmail.com)
 
 ---
 
