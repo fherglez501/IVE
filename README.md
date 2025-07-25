@@ -1,7 +1,7 @@
 
 # Bienvnid@s
 
-Este repositorio forma parte del curso online **"Introducción al análisis en R"**, orientado a estudiantes y profesionales sin experiencia previa en programación. El objetivo es brindar una formación práctica y progresiva **introductoria** en ciencia de datos utilizando herramientas abiertas, reproducibles y modernas.
+Este repositorio forma parte del curso online **"Introducción a la ciencia de datos con R"**, Módulo 5 del Curso **"Técnicas de Monitoreo de Fauna Silveste"**, organizado por el **Instituto Veterinario y de Ecología (IVE)** orientado a estudiantes y profesionales sin experiencia previa en programación. El objetivo es brindar una formación práctica y progresiva **introductoria** en ciencia de datos utilizando herramientas abiertas, reproducibles y modernas.
 
 ---
 
@@ -81,3 +81,14 @@ Docente responsable del curso
 ---
 
 > ¿Tienes dudas, sugerencias o detectaste un error? Abre un *Issue* en este repositorio o escríbeme directamente.
+
+---
+
+## 📖 ¿Cómo citar este curso?
+
+Aguilera González, J. F. (2025). *Introducción a la Ciencia de Datos con R* (versión 1.0) [Módulo 5 del curso “Técnicas de Monitoreo de Fauna Silvestre”]. Repositorio GitHub. https://github.com/fherglez501/IVE. Curso organizado por el Instituto Veterinario y de Ecología.
+
+
+👉 También puedes citarlo usando BibTeX: [Ver archivo CITATION.bib](./CITATION.bib)
+
+---

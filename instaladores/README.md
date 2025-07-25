@@ -1,4 +1,4 @@
-# Introducción al análisis en R
+# Introducción a la ciencia de datos con R
 ## 📋 ¿Qué instalan estos scripts?
 
 Este directorio contiene scripts automatizados para configurar un entorno funcional para análisis en R, incluyendo:
