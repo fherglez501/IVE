@@ -9,7 +9,7 @@ Este repositorio forma parte del curso online **"Introducción a la ciencia de d
 
 - Instalar y configurar R, RStudio, rig, Git y herramientas complementarias en Windows y macOS.
 - Comprender los fundamentos del lenguaje R y su uso en análisis de datos reales.
-- Manipular, explorar, visualizar y analizar datos con sintaxis moderna (`tidyverse`).
+- Manipular, explorar, visualizar y analizar datos con sintaxis moderna.
 - Aplicar buenas prácticas de reproducibilidad, documentación y análisis en proyectos de ciencia de datos.
 
 ---
@@ -24,7 +24,7 @@ Este repositorio forma parte del curso online **"Introducción a la ciencia de d
 
 ## ⚙️ Instalación rápida de herramientas
 
-Según tu sistema operativo, dirígete a la carpeta [`instaladores/`](./instaladores) para acceder a los scripts automatizados:
+Según tu sistema operativo, los scripts automatizados utilizan diferentes herramientas para facilitar la instalación de R, RStudio, rig, Git y otros complementos necesarios:
 
 - **Windows**: usa `winget`, PowerShell y CMD
 - **macOS**: usa `Homebrew` y terminal zsh

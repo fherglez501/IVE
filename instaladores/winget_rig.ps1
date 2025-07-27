@@ -46,7 +46,7 @@ If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 # ---------------------------
 function Install-WingetIfNeeded {
     Write-Host ""
-    Write-Host "...Verificando disponibilidad de winget..." -ForegroundColor Blue
+    Write-Host "...Verificando disponibilidad de winget..." -ForegroundColor DarkCyan
 
     if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
         Write-Host " === winget | NO INSTALADO === Intentando instalar App Installer..." -ForegroundColor Yellow
@@ -66,7 +66,7 @@ function Install-WingetIfNeeded {
         }
     } else {
         Write-Host " === winget | INSTALADO === " -ForegroundColor Yellow
-        Write-Host "...Actualizando App Installer..." -ForegroundColor Blue
+        Write-Host "...Actualizando App Installer..." -ForegroundColor DarkCyan
         try {
             winget upgrade --id Microsoft.DesktopAppInstaller -e --silent --accept-source-agreements --accept-package-agreements 2>&1 | Out-Null
             winget source update 2>&1 | Out-Null
@@ -86,10 +86,10 @@ Install-WingetIfNeeded
 # ---------------------------
 Write-Host ""
 if (-not (Get-Command wt.exe -ErrorAction SilentlyContinue)) {
-    Write-Host "Instalando Windows Terminal..." -ForegroundColor Blue
+    Write-Host "Instalando Windows Terminal..." -ForegroundColor DarkCyan
     winget install --id Microsoft.WindowsTerminal -e --accept-source-agreements --accept-package-agreements
 } else {
-    Write-Host "...Verificando disponibilidad de Terminal..." -ForegroundColor Blue
+    Write-Host "...Verificando disponibilidad de Terminal..." -ForegroundColor DarkCyan
     Write-Host " === Terminal de Windows | INSTALADO === " -ForegroundColor Yellow
     Write-Host " Para concer mas sobre la terminal consulta el siguiente enlace con Ctrl + click derecho: " -ForegroundColor Cyan
     Write-Host " https://docs.microsoft.com/en-us/windows/terminal/" -ForegroundColor DarkYellow
@@ -101,10 +101,10 @@ if (-not (Get-Command wt.exe -ErrorAction SilentlyContinue)) {
 # ---------------------------
 Write-Host ""
 if (-not (Get-Command git.exe -ErrorAction SilentlyContinue)) {
-    Write-Host " Instalando Git for Windows... " -ForegroundColor Blue
+    Write-Host " Instalando Git for Windows... " -ForegroundColor DarkCyan
     winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements
 } else {
-    Write-Host "...Verificando disponibilidad de Git..." -ForegroundColor Blue
+    Write-Host "...Verificando disponibilidad de Git..." -ForegroundColor DarkCyan
     Write-Host " === Git | INSTALADO === " -ForegroundColor Yellow
     Write-Host " Puedes usar Git directamente desde la terminal de Windows o Git Bash." -ForegroundColor Cyan
     Write-Host " Para conocer mas sobre Git consulta el siguiente enlace con Ctrl + click derecho: " -ForegroundColor Cyan
@@ -116,7 +116,7 @@ if (-not (Get-Command git.exe -ErrorAction SilentlyContinue)) {
 # VERIFICAR QUE GIT ESTÉ EN EL PATH
 # ---------------------------
 Write-Host ""
-Write-Host "...Verificando que Git se ubique en el PATH..." -ForegroundColor Blue
+Write-Host "...Verificando que Git se ubique en el PATH..." -ForegroundColor DarkCyan
 Write-Host " El PATH es una variable de entorno del sistema operativo" -ForegroundColor White
 Write-Host " que contiene una lista de directorios donde se buscan los ejecutables" -ForegroundColor White
 Write-Host " Si Git no esta en el PATH, no podras usarlo desde la terminal" -ForegroundColor White
@@ -147,13 +147,13 @@ if (-not $gitCmd) {
 # INSTALAR RIG
 # ---------------------------
 Write-Host ""
-Write-Host "...Instalando = RIG -- The R Installation Manager..." -ForegroundColor Blue
+Write-Host "...Instalando = RIG -- The R Installation Manager..." -ForegroundColor DarkCyan
 
 # 1. Verificar si 'rig' esta instalado
 $rigCmd = Get-Command rig -ErrorAction SilentlyContinue
 
 if (-not $rigCmd) {
-    Write-Host "... Procediendo ..." -ForegroundColor Blue
+    Write-Host "... Procediendo ..." -ForegroundColor DarkCyan
 
     if (-not $DryRun) {
         winget install --id Posit.rig -e --accept-source-agreements --accept-package-agreements
@@ -196,7 +196,7 @@ if (-not $rigCmd) {
 # INSTALAR R CON RIG
 # ---------------------------
 Write-Host ""
-Write-Host "...Instalando = Ultima version de R con rig..." -ForegroundColor Blue
+Write-Host "...Instalando = Ultima version de R con rig..." -ForegroundColor DarkCyan
 
 if (-not $DryRun) {
     rig add release
@@ -208,7 +208,7 @@ if (-not $DryRun) {
 # CONFIGURAR RIG
 # ---------------------------
 Write-Host ""
-Write-Host "...Configurando entorno con rig..." -ForegroundColor Blue
+Write-Host "...Configurando entorno con rig..." -ForegroundColor DarkCyan
 Write-Host "Se agrega 'pak' al sistema para instalacion de paquetes en R..." -ForegroundColor White
 Write-Host "Asi como 'RTools' (compilador y entorno de desarrollo nativo)..." -ForegroundColor White
 Write-Host "Y la 'libreria de usuario' para instalacion persistente de paquetes..." -ForegroundColor White
@@ -226,7 +226,7 @@ if (-not $DryRun) {
 # INSTALAR RSTUDIO
 # ---------------------------
 Write-Host ""
-Write-Host "...Instalando RStudio Desktop..." -ForegroundColor Blue
+Write-Host "...Instalando RStudio Desktop..." -ForegroundColor DarkCyan
 Write-Host "RStudio es el entorno de desarrollo integrado (IDE) para trabajar con R de forma visual y eficiente." -ForegroundColor White
 
 if (-not $DryRun) {

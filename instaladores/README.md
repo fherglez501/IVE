@@ -96,19 +96,16 @@ install.packages("pak")
 
 ---
 
-## 📁 Archivos disponibles
-- `homebrew_rig.sh`: Script para macOS usando Homebrew
-- `instalador_windows.bat`: Script auxiliar para ejecutar PowerShell con permisos
-- `winget_rig.ps1`: Script PowerShell para Windows
+## ⚠️ Advertencia de seguridad
 
----
+Este script se proporciona con fines educativos y de apoyo técnico para facilitar la instalación de software de código abierto (como R, RStudio, Git, etc.). Su ejecución modificará tu sistema instalando programas desde **fuentes oficiales** mediante herramientas automatizadas.
 
-## ⚠️ Descargo de responsabilidad
-
-Estos scripts se proporcionan con fines educativos y de conveniencia. Su ejecución implica la instalación automatizada de software libre de terceros.
-**El autor no asume ninguna responsabilidad por posibles daños, fallos del sistema o conflictos que puedan surgir como resultado de su uso.**
-Asegúrate de comprender los cambios que se aplicaran a tu sistema
-
+Antes de ejecutar el script, ten en cuenta lo siguiente:
+1. Revisa el contenido del código para comprender los cambios que realizará en tu equipo.
+2. En caso de dudas técnicas o situaciones legales, el repositorio puede ser auditado para verificar la integridad del código original.
+3. Pueden surgir problemas por incompatibilidades con configuraciones específicas del sistema.
+4. **El autor no asume ninguna responsabilidad por modificaciones no autorizadas al código original realizadas por terceros.** 
+ 
 ---
 
 ## 📜 Licencia
