@@ -1,0 +1,14 @@
+# Una forma distinta de realizarlo es con un "for"
+
+for (i in seq_along(files_in_folder$id)) {
+  if (stringr::str_detect(files_in_folder$name[i], "\\.xlsx$")) {
+    tryCatch({
+      googledrive::drive_download(
+        file = googledrive::as_id(files_in_folder$id[i]),
+        path = here::here("data/raw", files_in_folder$name[i]),
+        overwrite = TRUE
+      )
+      message("✅ Descargado: ", files_in_folder$name[i])
+    }, error = function(e) { })
+  }
+}

@@ -1,0 +1,44 @@
+FUNDAMENTOS DE TIPOS DE OBJETOS EN R
+
+VECTORES
+- Son los objetos más básicos en R.
+- Pueden contener una secuencia de valores del mismo tipo (numérico, carácter, lógico, etc.).
+- Ejemplo: x <- c(1, 2, 3) crea un vector numérico con tres elementos.
+
+MATRICES
+- Son estructuras bidimensionales que solo contienen un tipo de dato (como vectores).
+- Se construyen a partir de vectores y se definen por filas y columnas.
+- La función matrix() permite crear matrices especificando el número de filas y columnas.
+- El acceso se hace por posición: m[fila, columna].
+- Se pueden asignar nombres a filas y columnas con dimnames().
+- Útil cuando se requiere trabajar con datos numéricos organizados en forma tabular sin variables de diferentes tipos.
+
+LISTAS
+- A diferencia de vectores y matrices, las listas pueden contener elementos de diferentes tipos.
+- Una lista puede incluir vectores, matrices, data frames, funciones, etc.
+- Los elementos pueden ser accedidos por índice (lista[[1]]) o por nombre (lista$nombre).
+- Muy útil para guardar resultados complejos (por ejemplo, salidas de modelos, múltiples tablas, etc.).
+
+DATA FRAMES (marcos de datos)
+- Son estructuras similares a las tablas en una hoja de cálculo.
+- Cada columna puede ser de un tipo distinto (números, texto, factores, etc.).
+- Cada fila representa una observación y cada columna una variable.
+- Se puede convertir una matriz en data frame con as.data.frame().
+- El acceso se hace como en matrices: df[fila, columna].
+
+FACTORES
+- Son estructuras usadas para representar variables categóricas.
+- Internamente son valores enteros con etiquetas (niveles).
+- Se crean a partir de vectores con la función factor().
+- Se pueden especificar los niveles y su orden.
+- Muy útiles para análisis estadístico y visualización (por ejemplo, con ggplot2).
+
+IMPORTANTE:
+- Los factores ayudan a definir el orden y clasificación de categorías.
+- Las listas permiten agrupar múltiples objetos diferentes en una sola unidad.
+- Las matrices son útiles cuando todos los datos tienen el mismo tipo y formato.
+- Los data frames son el tipo de objeto más común en análisis de datos con R.
+
+RECUERDA:
+- Usa str(objeto) para inspeccionar la estructura interna de cualquier objeto.
+- Usa class(objeto) para ver qué tipo de objeto estás manejando.

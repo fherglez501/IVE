@@ -1,0 +1,58 @@
+NOTA SOBRE LOS DATOS Y EL SCRIPT
+
+IMPORTANTE:
+Los archivos utilizados en este ejercicio fueron generados por el Dr. Cristian Miranda Benabarre como parte de un diseño experimental desarrollado durante su investigación doctoral.
+
+Más información sobre el autor:
+Cristian Miranda Benabarre — https://www.researchgate.net/profile/Cristian-Miranda-Benabarre
+
+Uso de los datos:
+Este subconjunto de datos ha sido compartido con fines exclusivamente didácticos en el marco del curso. 
+
+**No está permitido su uso con fines de investigación, publicación o distribución fuera del aula.**
+
+Por respeto a la autoría y a los principios de ética académica, cualquier reproducción total o parcial de este contenido debe contar con autorización expresa del autor.
+
+---
+
+FUNDAMENTOS CUBIERTOS EN EL SCRIPT
+
+Lectura de datos:
+Se usan funciones del paquete `readxl` para importar archivos `.xlsx`. Cada archivo representa un tratamiento distinto en un diseño experimental.
+
+Objetos en R:
+Los datos se almacenan como *data frames*, el tipo de objeto más común para análisis de datos tabulares.
+
+Uso de `mutate()` y `select()`:
+Se añade una nueva columna llamada `Tratamiento` para identificar el origen de cada grupo de datos. Luego se reorganizan las columnas con `select()` para poner `Tratamiento` al inicio.
+
+Combinación de data frames:
+Se combinan los distintos data frames con `bind_rows()` de `dplyr` para formar un solo objeto consolidado llamado `df`.
+
+Guardado de objetos:
+El objeto consolidado se puede guardar con `save()` (en formato `.Rdata`) o con `saveRDS()` (en formato `.rds`) para reutilizarlo posteriormente.
+
+---
+
+MANEJO DE FECHAS Y HORAS EN R
+
+R dispone de clases específicas para trabajar con datos temporales:
+
+1. `Date`: para fechas simples (día/mes/año).
+2. `POSIXct` y `POSIXlt`: para fechas + hora (día, mes, año, hora, minuto, segundo).
+
+- En el script, se construye una nueva variable de tipo `POSIXct` llamada `hora_min_seg`, que combina las columnas de fecha y hora (`ANO`, `MES`, `DIA`, `HORA`, `MINUTO`, `SEGUNDO`) en un único objeto cronológico.
+- Esta transformación es fundamental para análisis temporales (agregaciones por hora, día juliano, etc.).
+
+Día juliano (`%j`): representa el número de día del año (1 al 365/366).
+Hora del día (`%H`): permite extraer la hora como número (útil para análisis circadianos o de actividad por periodo).
+
+---
+
+Finalidad del ejercicio:
+
+Este script permite introducir a los estudiantes en:
+- La manipulación estructurada de múltiples conjuntos de datos.
+- La creación de columnas adicionales con base en transformaciones de variables.
+- El trabajo con fechas y horas, un aspecto clave en estudios experimentales, ecológicos y epidemiológicos.
+
